@@ -91,7 +91,7 @@ export GEMINI_API_KEY="your_api_key_here"
 ### Prerequisites
 
 * Install [JacLang CLI](https://jaclang.com/docs/getting-started/installation/)
-* Python 3.8 or above
+* Python 3.12 or above
 * VS Code (recommended) with Jac extension (optional)
 
 ### Steps to Run
