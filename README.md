@@ -1,162 +1,82 @@
-# QuizGame\_TeamByteBrains
+# QuizGame TeamByteBrains
 
-This project is a simple AI-powered quiz game developed by our Team **ByteBrains**. It runs in the terminal and challenges users with multiple-choice questions, providing hints and AI-generated answers to help users learn effectively.
+An AI-powered terminal-based quiz game developed by Team ByteBrains. Features multiple-choice questions with intelligent hint system and AI-generated feedback using Google Gemini to enhance learning experience.
 
----
+## Features
 
-## 📌 Overview
+- Multiple-choice questions with four options (a, b, c, d)
+- Score tracking throughout the quiz
+- Manual hints after first incorrect answer
+- AI-generated correct answers after second incorrect attempt
+- Terminal-based interactive interface
+- Built with Jac programming language
+- Google Gemini AI integration for intelligent feedback
 
-The **QuizGame** is a terminal-based interactive quiz designed to test general knowledge. It offers:
+## Tech Stack
 
-* Multiple-choice questions with 4 options each.
-* Immediate feedback on answers.
-* A manual hint after the first wrong attempt.
-* An AI-powered correct answer reveal after the second wrong attempt.
+- **Jac Language** - Core quiz logic and execution
+- **Google Gemini AI** - AI-powered answer feedback via API
+- **Python** - Backend AI API integration
+- **Terminal/Console** - User interface
+- **VS Code** - Development environment
 
-The AI integration uses Google’s Gemini language model to generate helpful feedback, improving user learning without giving away answers too soon.
+## How It Works
 
----
+1. Game displays welcome message and presents questions sequentially
+2. Each question shows four answer options (a, b, c, d)
+3. User input is evaluated:
+   - **Correct answer**: Score increases, "Correct!" message shown
+   - **First incorrect attempt**: Manual hint provided
+   - **Second incorrect attempt**: AI generates correct answer explanation
+4. Process repeats for all questions
+5. Final score and performance summary displayed
 
-## 🔍 Key Features
+## AI Integration
 
-* Multiple-choice questions with four options (a, b, c, d)
-* Tracks user score throughout the quiz
-* Manual hints after the first incorrect answer to guide the player
-* AI-generated correct answers after the second incorrect attempt
-* Clear and simple console interface
-* Built using the Jac programming language
-* AI integration using Google Gemini model via API
-
----
-
-## 🔧 Technologies & Tools Used
-
-* **Jac Language** – The core language used to build and run the quiz logic
-* **Google Gemini AI** – Provides AI-generated answer feedback using a cloud API
-* **Python** – Used under the hood by Jac for AI API calls
-* **Terminal/Console** – User interface for the quiz
-* **VS Code** – Recommended editor for development and running Jac scripts
-
----
-
-## ⚙️ How It Works
-
-1. The game starts with a welcome message and a sequence of questions.
-2. Each question is displayed with four answer options (a, b, c, d).
-3. The user inputs their choice.
-4. If the answer is correct:
-
-   * A “Correct!” message is shown and the score increases.
-5. If the answer is incorrect:
-
-   * On the **first incorrect attempt**, the game provides a **manual hint** (a helpful clue related to the question).
-   * On the **second incorrect attempt**, the game calls the **AI (Gemini)** to generate and display the **correct answer**.
-6. This process repeats for all questions.
-7. At the end, the final score and a performance message are displayed.
-
----
-
-## 🤖 AI Integration Details
-
-* The AI is triggered only on the second incorrect attempt for a question.
-* It uses the **Gemini 1.5 Flash** model via Jac’s AI integration feature.
-* The correct answer is passed as a prompt to the AI to generate a helpful response like:
-
+- Triggered only on second incorrect attempt per question
+- Uses Gemini 1.5 Flash model via Jac's AI integration
+- Generates helpful responses with correct answer format:
   ```
   ✅ Correct answer: a
   ```
-* This keeps the game engaging and provides users with intelligent feedback.
 
----
-
-## 🔑 How to Get Your Gemini API Key
-
-To enable AI features, you must get an API key from Google:
-
-1. Visit [Google MakerSuite](https://makersuite.google.com/app) and sign in.
-2. Click your profile picture in the top-right corner, then **API Keys**.
-3. Generate a new API key and copy it.
-4. Set it as an environment variable in your terminal before running the game:
-
-```bash
-export GEMINI_API_KEY="your_api_key_here"
-```
-
-(On Windows CMD: `set GEMINI_API_KEY=your_api_key_here`)
-
----
-
-## 💻 Running the Quiz Game in VS Code
+## Setup
 
 ### Prerequisites
+- JacLang CLI installed
+- Python 3.12 or above
+- Google Gemini API key
 
-* Install [JacLang CLI](https://jaclang.com/docs/getting-started/installation/)
-* Python 3.12 or above
-* VS Code (recommended) with Jac extension (optional)
+### API Key Configuration
+1. Visit [Google MakerSuite](https://makersuite.google.com/app)
+2. Generate new API key from profile menu
+3. Set environment variable:
+   ```bash
+   export GEMINI_API_KEY="your_api_key_here"
+   # Windows: set GEMINI_API_KEY=your_api_key_here
+   ```
 
-### Steps to Run
-
-1. Clone or download the repository:
-
+### Run Game
 ```bash
-https://github.com/ThiruvarankanM/QuizGame_TeamByteBrains
-```
-
-2. Set your Gemini API key in your terminal:
-
-```bash
-export GEMINI_API_KEY="your_api_key_here"
-```
-
-3. Run the quiz:
-
-```bash
+# Run the quiz
 jac run quiz_game.jac
 ```
 
-4. Play the game interactively in the terminal!
+## Game Demo Screenshots
 
----
+| Step | Description | Screenshot |
+|------|-------------|------------|
+| 1 | Quiz Launch | ![Step 1](https://github.com/ThiruvarankanM/QuizGame_TeamByteBrains/blob/28c45491939ec67d4979f25d1d93d2f56f2e942a/QuizGame_Run_Demo/1.png) |
+| 2 | Multiple-choice Question | ![Step 2](https://github.com/ThiruvarankanM/QuizGame_TeamByteBrains/blob/28c45491939ec67d4979f25d1d93d2f56f2e942a/QuizGame_Run_Demo/2.png) |
+| 3 | Manual Hint Display | ![Step 3](https://github.com/ThiruvarankanM/QuizGame_TeamByteBrains/blob/28c45491939ec67d4979f25d1d93d2f56f2e942a/QuizGame_Run_Demo/3.png) |
+| 4 | AI-Generated Answer | ![Step 4](https://github.com/ThiruvarankanM/QuizGame_TeamByteBrains/blob/28c45491939ec67d4979f25d1d93d2f56f2e942a/QuizGame_Run_Demo/4.png) |
+| 5 | Correct Answer Confirmation | ![Step 5](https://github.com/ThiruvarankanM/QuizGame_TeamByteBrains/blob/28c45491939ec67d4979f25d1d93d2f56f2e942a/QuizGame_Run_Demo/5.png) |
+| 6 | Final Score Display | ![Step 6](https://github.com/ThiruvarankanM/QuizGame_TeamByteBrains/blob/28c45491939ec67d4979f25d1d93d2f56f2e942a/QuizGame_Run_Demo/6.png) |
 
-## 🤝 Contribution
+## Development Team
 
-We welcome contributions! Feel free to add new questions, improve AI interaction, or enhance UI. Fork the repo and submit pull requests.
+Team ByteBrains
 
----
+## License
 
-## 🛠 Built With
-
-* Jac Language
-* Google Gemini AI via API
-* Python (for AI API interaction)
-* Terminal / Console
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License.
-
----
-## 📸 Quiz_Game Demo 
-
-### Step 1 – Launching the Quiz 
-![Step 1](https://github.com/ThiruvarankanM/QuizGame_TeamByteBrains/blob/28c45491939ec67d4979f25d1d93d2f56f2e942a/QuizGame_Run_Demo/1.png)
-
-### Step 2 - The first multiple-choice question is displayed with four options (a/b/c/d).
-![Step 2](https://github.com/ThiruvarankanM/QuizGame_TeamByteBrains/blob/28c45491939ec67d4979f25d1d93d2f56f2e942a/QuizGame_Run_Demo/2.png)
-
-### Step 3 - User selects an incorrect answer. A manual hint is shown to guide the next attempt.
-![Step 3](https://github.com/ThiruvarankanM/QuizGame_TeamByteBrains/blob/28c45491939ec67d4979f25d1d93d2f56f2e942a/QuizGame_Run_Demo/3.png)
-
-### Step 4 - User selects another incorrect answer. The AI (Gemini) generates and displays the correct answer.
-![Step 4](https://github.com/ThiruvarankanM/QuizGame_TeamByteBrains/blob/28c45491939ec67d4979f25d1d93d2f56f2e942a/QuizGame_Run_Demo/4.png)
-
-### Step 5 - User selects the correct option, and the system confirms with a "✅ Correct!" message.
-![Step 5](https://github.com/ThiruvarankanM/QuizGame_TeamByteBrains/blob/28c45491939ec67d4979f25d1d93d2f56f2e942a/QuizGame_Run_Demo/5.png)
-
-### Step 6 - All questions are answered. The final score is shown out of 3 along with a performance message.
-![Step 6](https://github.com/ThiruvarankanM/QuizGame_TeamByteBrains/blob/28c45491939ec67d4979f25d1d93d2f56f2e942a/QuizGame_Run_Demo/6.png)
-
-
-
+MIT License
